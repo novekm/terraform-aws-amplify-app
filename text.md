@@ -1,4 +1,15 @@
-## Basic Usage - CodeCommit Repo with Automatic Branch Creation
+# Features
+- Conditional and Dynamic Resource Creation
+- Automatic and Manual Branch Creation Support
+- Automatic and Manual Branch Deletion Support
+- Automatic Build for Branches Support
+- Customizable Automatic Branch Creation Patterns Support
+- Pull Request Previews Support Support
+- CodeCommit, GitHub, GitLab support with examples
+- Related workshop for deeper explanation
+  - [**Automated Deployment of AWS Amplify Apps with Terraform**](https://catalog.workshops.aws/amplify-with-terraform/)
+
+# Basic Usage - CodeCommit Repo with Automatic Branch Creation
 
 ```hcl
 // This is a template file for a basic deployment.
@@ -37,6 +48,27 @@ module "sample-qs" {
       branch_name = "main"
       prefix      = "www"
     },
+  }
+
+  custom_rewrite_and_redirect = {
+    // Static website rewrite/redirect
+    static_site = {
+      source = "/<*>"
+      status = "404"
+      target = "/index.html"
+    },
+    // Rewrite/redirect for single page apps - default if you don't specify anything else
+    # single_page_app = {
+    #   source = "</^[^.]+$|\\.(?!(css|gif|ico|jpg|js|png|txt|svg|woff|ttf|map|json)$)([^.]+$)/>"
+    #   status = "200"
+    #   target = "/index.html"
+    # },
+    // Rewrite/redirect for `yourdomain.com/app2` to `yourotherdomain.com`
+    # app2 = {
+    #   source = "/app2"
+    #   status = "302"
+    #   target = "https://yourotherdomain.com"
+    # },
   }
 }
 ```

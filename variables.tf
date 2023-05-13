@@ -5,14 +5,14 @@ variable "app_name" {
   description = "The name of the Sample Amplify Application."
 }
 variable "path_to_build_spec" {
-  type = string
-  default = null
+  type        = string
+  default     = null
   description = "The path to the location of your build_spec file. Use if 'build_spec' is not defined."
 
 }
 variable "build_spec" {
-  type = string
-  default = null
+  type        = string
+  default     = null
   description = "The actual content of your build_spec. Use if 'path_to_build_spec' is not defined."
 }
 variable "manual_branches" {
@@ -85,26 +85,20 @@ variable "domain_name" {
   description = "The name of your domain. Ex. naruto.ninja"
 }
 variable "domain_associations" {
-  type    = map(any)
-  default = {}
+  type        = map(any)
+  default     = {}
   description = "The domains/subdomains you wish to associate with the Amplify App. These are mapped to git branches."
 
 }
 variable "wait_for_verification" {
-  type = bool
-  default = false
+  type        = bool
+  default     = false
   description = "If set to 'true', the resource will wait for the domain association status to change to 'PENDING_DEPLOYMENT' or 'AVAILABLE'. Setting this to false will skip the process. Default is set to 'false'."
 
 }
 variable "custom_rewrite_and_redirect" {
-  type = map(any)
-  default = {
-    single_page_app = {
-      source = "</^[^.]+$|\\.(?!(css|gif|ico|jpg|js|png|txt|svg|woff|ttf|map|json)$)([^.]+$)/>"
-      status = "200"
-      target = "/index.html"
-    }
-  }
+  type        = map(any)
+  default     = {}
   description = "Custom rewrites and redirects for the domain associations."
 
 }
@@ -148,13 +142,13 @@ variable "codecommit_repo_default_branch" {
   default = "main"
 }
 variable "lookup_existing_codecommit_repo" {
-  type = bool
-  default = false
+  type        = bool
+  default     = false
   description = "Conditional fetch of existing CodeCommit repo."
 
 }
 variable "existing_codecommit_repo_name" {
-  type = string
+  type    = string
   default = null
 
 }
