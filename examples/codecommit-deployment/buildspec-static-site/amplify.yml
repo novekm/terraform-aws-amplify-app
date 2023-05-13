@@ -1,0 +1,21 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo Static website files detected...
+        - echo Navigating to the 'amplify-app' directory...
+        - pwd
+        # Change this to be the path to your repo with static website files
+        - cd amplify-app
+        - echo "🛠️ Ready to build!"
+
+    build:
+      commands: []
+  artifacts:
+    # Change this to be the path to your repo with static website files
+    baseDirectory: ./amplify-app
+    files:
+      - '**/*'
+  cache:
+    paths: []
