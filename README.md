@@ -4,9 +4,9 @@
 - Automatic and Manual Branch Deletion Support
 - Automatic Build for Branches Support
 - Customizable Automatic Branch Creation Patterns Support
-- Pull Request Previews Support Support
+- Pull Request Previews Support
 - CodeCommit, GitHub, GitLab support with examples
-- Related workshop for deeper explanation
+- **Related workshop for deeper explanation**
   - [**Automated Deployment of AWS Amplify Apps with Terraform**](https://catalog.workshops.aws/amplify-with-terraform/)
 
 # Basic Usage - CodeCommit Repo with Automatic Branch Creation
