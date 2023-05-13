@@ -1,6 +1,6 @@
 ## Basic Usage - CodeCommit Repo with Automatic Branch Creation
 
-```go
+```hcl
 // This is a template file for a basic deployment.
 // Modify the parameters below with actual values
 module "sample-qs" {
@@ -12,7 +12,7 @@ module "sample-qs" {
   create_codecommit_repo = true
   lookup_existing_codecommit_repo = false
   // see /examples for sample_build_spec
-  path_to_build_spec = "/path/to/your/build_spec/file"
+  path_to_build_spec = "novekm/amplify-app/aws"
 
 
 
@@ -55,7 +55,8 @@ module "sample-qs" {
 Report issues/questions/feature requests on the [issues] page. Reach out to me if you'd like to be a contributor!
 
 
-
+# Workshop
+For more information, check out my workshop [**Automating Deployment of AWS Amplify Apps with Terraform**](https://catalog.workshops.aws/amplify-with-terraform/)
 
 
 ## Requirements
