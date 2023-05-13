@@ -13,7 +13,7 @@ frontend:
     build:
       commands:
         - echo "🛠️ Setting up your environmental variables..."
-        # Change these to be whichever environment variables you want
+        # Change these to be whichever environment variables you want to use
         - echo "VITE_REGION=$sample_REGION" >> .env
         - echo "VITE_API_ID=$sample_GRAPHQL_API_ID" >> .env
         - echo "VITE_GRAPHQL_URL=$sample_GRAPHQL_ENDPOINT" >> .env
