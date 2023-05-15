@@ -17,7 +17,7 @@ data "aws_iam_policy_document" "amplify_trust_relationship" {
 resource "aws_iam_role" "amplify_codecommit" {
   # count               = var.create_codecommit_repo ? 1 : 0
   count               = var.create_codecommit_repo ? 1 : 0
-  name                = var.amplify_codecommit_role_name
+  name                = "${var.amplify_codecommit_role_name}-${var.app_name}"
   assume_role_policy  = data.aws_iam_policy_document.amplify_trust_relationship.json
   managed_policy_arns = ["arn:aws:iam::aws:policy/AWSCodeCommitReadOnly"]
 }
