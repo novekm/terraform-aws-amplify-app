@@ -1,6 +1,6 @@
 // This is a template file for a basic deployment.
 // Modify the parameters below with actual values
-module "sample-qs" {
+module "aws-amplify-app" {
   // location of the module - can be local or git repo
   source = "novekm/amplify-app/aws"
 
@@ -9,7 +9,7 @@ module "sample-qs" {
   lookup_existing_codecommit_repo = false    // Default value - set to `true` if you wish to use an existing CodeCommit repo
   # existing_repo_url = "" // If using the module to create a CodeCommit Repo, the repo's url is already referenced. If using your own repo, change this value to that repo url.
 
-  path_to_build_spec = "../amplify.yml" // If you want build_spec to be in a specific file. Only use if you are not using 'build_spec' variable
+  path_to_build_spec = "../amplify.yml" // Example path if you want build_spec to be in a specific file. Only use if you are not using 'build_spec' variable
 
   # buildspec = "" // If you want to have your build_spec defined in main.tf - Only use if you are not using 'path_to_build_spec' variable
 
