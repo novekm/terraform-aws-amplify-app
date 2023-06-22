@@ -1,8 +1,8 @@
 // This is a template file for a basic deployment.
 // Modify the parameters below with actual values
-module "sample-qs" {
+module "aws-amplify-app" {
   // location of the module - can be local or git repo
-  source = "./modules/novekm-static-website-amplify"
+  source = "novekm/amplify-app/aws"
 
   app_name                       = "my-app"                             // Name of the Amplify App - default is 'sample-amplify-app'
   existing_repo_url              = "your-existing-repo-url"             // Your GitHub repo url
@@ -10,9 +10,9 @@ module "sample-qs" {
   ssm_github_access_token_name   = "Enter-Your-SSM-Parameter-Store-Key" // name of the paramater in SSM
 
 
-  path_to_build_spec = "../amplify.yml" // If you want build_spec to be in a specific file. Only use if you are not using `build_spec
+  path_to_build_spec = "../amplify.yml" // Example path if you want build_spec to be in a specific file. Only use if you are not using 'build_spec' variable
 
-  # buildspec = "" // If you want to have your build_spec defined in main.tf - Only use if you are not using `path_to_build_spec`
+  # buildspec = "" // If you want to have your build_spec defined in main.tf - Only use if you are not using 'path_to_build_spec' variable
 
   // For this to work with domain associations, the branch(es) must already exist in your
   // connected git repo. See the README for more information.

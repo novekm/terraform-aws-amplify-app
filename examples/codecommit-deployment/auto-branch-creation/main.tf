@@ -2,16 +2,16 @@
 // Modify the parameters below with actual values
 module "sample-qs" {
   // location of the module - can be local or git repo
-  source = "./modules/novekm-static-website-amplify"
+  source = "novekm/amplify-app/aws"
 
   app_name                        = "my-app" // Name of the Amplify App - default is 'sample-amplify-app'
   create_codecommit_repo          = true     // Creates CodeCommit repo and necessary permissions for Amplify App to read from it. Default value is `false`
   lookup_existing_codecommit_repo = false    // Default value - set to `true` if you wish to use an existing CodeCommit repo
   # existing_repo_url = "" // If using the module to create a CodeCommit Repo, the repo's url is already referenced. If using your own repo, change this value to that repo url.
 
-  path_to_build_spec = "../amplify.yml" // If you want build_spec to be in a specific file. Only use if you are not using `build_spec
+  path_to_build_spec = "../amplify.yml" // If you want build_spec to be in a specific file. Only use if you are not using 'build_spec' variable
 
-  # buildspec = "" // If you want to have your build_spec defined in main.tf - Only use if you are not using `path_to_build_spec`
+  # buildspec = "" // If you want to have your build_spec defined in main.tf - Only use if you are not using 'path_to_build_spec' variable
 
   // For this to work with domain associations, the branch(es) must already exist in your
   // connected git repo. See the README for more information.
